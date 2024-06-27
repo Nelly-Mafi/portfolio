@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nelly Mafi - Interaction Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style_home.css" type="text/css">
+    <!-- Set favicon to the same image as the logo -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+</head>
+<body data-bg="light">
+    <div id="loading-screen">
+        <div class="loading-text">
+            <div class="loading-title">NELLY MAFI</div>
+            <div class="loading-subtitle">Interaction Designer</div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+    <div id="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/images/logo.png" alt="Logo" class="logo">
+                <span class="site-name">NELLY MAFI</span>
+            </div>
+            <div id="topnav">
+                <ul>
+                    <li><a href="about.html"><span class="text">ABOUT</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="intro" class="section">
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="assets/videos/lotus.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="content-container">
+                <div class="hero__strap">
+                    <h2 class="hero__title">
+                        <span class="js-letters">Innovation</span>
+                    </h2>
+                    <h3 class="hero__subtitle">Creativity</h3>
+                </div>
+            </div>
+        </div>
+        <div class="white-spacer"></div>
+        <div id="message" class="section">
+            <h2 id="welcomeText">Welcome to the Future</h2>
+        </div>
+        <div class="spacer"></div>
+    </div>
+    <div class="pin">
+        <canvas id="hero-lightpass"></canvas>
+    </div>
+    <script src="js/script_home.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+/* Root definitions for color themes */
+:root {
+    --body_bkgr_color: #fcffff;
+    --header_bkgr_color: transparent;
+    --submenu_bkgr_color: #fcffff;
+    --footer_bkgr_color: #e3f3fb;
+    --border_color: #cccccc;
+    --nav_text_color: #ffffff; /* Set to white */
+    --body_text_color: #000000;
+    --body_link_color: #010e45;
+    --body_link_hover_color: #059BD8;
+    --button_bkgr_color: #1C5E82;
+    --button_hover_bkgr_color: #059BD8;
+    --button_text_color: #FFFFFF;
+    --button_clicked_bkgr_color: #FFFFFF;
+    --button_clicked_text_color: #000000;
+}
+
+/* Universal base styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
+    background: var(--body_bkgr_color);
+    color: var(--body_text_color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure wrapper takes full height */
+    opacity: 1; /* Initial state for fade-in effect */
+}
+
+/* Header styles */
+#header {
+    opacity: 1;
+    background: var(--header_bkgr_color); /* Keep background transparent */
+    position: fixed; /* Ensure the header is fixed */
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto; /* Fixed height for the header */
+    box-sizing: border-box; /* Include padding and border in height */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center;
+    height: 100%;
+    padding: 30px 5%; /* Consistent padding */
+}
+
+.back-button a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--nav_text_color); /* Default color */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.back-button a:hover {
+    color: var(--body_link_hover_color); /* Change color on hover */
+}
+
+.back-button a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.back-button a:hover i {
+    transform: translateX(-5px); /* Move the arrow to the left on hover */
+}
+
+#topnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.email-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--button_text_color); /* Default color */
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust padding to look like a button */
+    background-color: var(--button_bkgr_color); /* Button background color */
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally and vertically */
+    width: 220px; /* Fixed width for larger screens */
+    text-align: center; /* Center text within the fixed width container */
+    height: 40px; /* Ensure button maintains the same height */
+    position: relative;
+    overflow: hidden; /* Hide overflow for animation */
+}
+
+.email-link span {
+    position: absolute;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.email-link .copy-text,
+.email-link .email-copied-text {
+    opacity: 0; /* Initially hide copy and email-copied text */
+}
+
+.email-link:hover .copy-text {
+    opacity: 1; /* Show copy text on hover */
+}
+
+.email-link:hover .original-text {
+    opacity: 0; /* Hide original text on hover */
+}
+
+.email-link.clicked {
+    background-color: var(--button_clicked_bkgr_color); /* Change background color on click */
+    color: var(--button_clicked_text_color); /* Change text color on click */
+}
+
+.email-link.clicked .copy-text {
+    display: none; /* Hide copy text on click */
+}
+
+.email-link.clicked .email-copied-text {
+    opacity: 1; /* Show email-copied text on click */
+}
+
+.email-link .email-copied-text {
+    color: var(--button_clicked_text_color); /* Change text color to black */
+}
+
+/* Intro section with adjusted padding */
+#intro {
+    background-color: #181818; /* Set background to dark */
+    height: 100vh; /* Full viewport height */
+    padding: 0; /* Remove padding to ensure full coverage */
+    position: relative; /* Relative positioning for layering */
+    z-index: 0; /* Ensure intro is behind the header */
+    overflow: hidden; /* Ensure video covers the whole section */
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Ensure it takes the full width */
+    color: #ffffff; /* White text color */
+}
+
+.intro-image {
+    width: 45%; /* Set width to 45% */
+    height: auto; /* Maintain the image's original dimensions */
+    position: relative;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Cover the entire container */
+}
+
+.intro-text {
+    width: 55%; /* Ensure the text takes the remaining space */
+    padding: 0; /* Remove padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    position: relative; /* Needed for positioning h1 */
+}
+
+.intro-text h1 {
+    font-size: 4em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ffffff; /* White color for the heading */
+    position: absolute; /* Position absolute for overlap */
+    left: -22%; /* Adjust to overlap image */
+    bottom: 100%;
+}
+
+.intro-text p, .social-icons {
+    padding: 0 0 0 10%;
+    color: #ffffff; /* White text color */
+    position: relative; /* Relative to intro-text container */
+}
+
+.intro-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #ffffff; /* White color for the social icons */
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.social-icons a:hover {
+    color: var(--body_link_hover_color); /* Change color on hover */
+}
+
+/* White spacer div */
+.white-spacer {
+    background: #ffffff;
+    height: 100vh; /* Adjust height as needed */
+    width: 100%; /* Ensure full width */
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.spacer {
+    background: #000000;
+    height: 100vh;
+    margin-top: 0; /* Adjust for fixed header */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; /* Adjust for fixed header */
+}
+
+#message h2 {
+    color: #fff;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Canvas styles */
+canvas {
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-image {
+        width: 100%;
+        height: auto; /* Adjust height for mobile view */
+        margin-bottom: 30px; /* Add spacing between image and text */
+    }
+
+    .intro-text {
+        width: 100%;
+        padding-left: 0; /* Remove left padding for mobile view */
+        margin-left: 0; /* Remove overlap for mobile */
+    }
+
+    .intro-text h1 {
+        font-size: 3em; /* Adjust font size for mobile */
+    }
+
+    .intro-text p {
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+
+    .header-container {
+        flex-direction: row; /* Keep elements in a row */
+        justify-content: space-between; /* Distribute space */
+        align-items: center; /* Vertically center items */
+    }
+
+    .logo-container,
+    #topnav {
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    #topnav {
+        width: auto; /* Keep width auto */
+        justify-content: flex-end; /* Align to the right */
+    }
+
+    /* Adjust width for smaller screens */
+    .email-link {
+        width: 115px; /* Fixed width for smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    #topnav {
+        position: relative;
+        right: auto;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end; /* Align to the right */
+    }
+
+    #topnav ul {
+        flex-direction: row;
+    }
+}
+
+/* Ensure text color for header items */
+#header .back-button a,
+#header .email-link {
+    color: #FFFFFF !important; /* Force white color */
+}
