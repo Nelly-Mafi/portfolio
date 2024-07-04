@@ -1,0 +1,364 @@
+/* Root definitions for color themes */
+:root {
+    --body_bkgr_color: #fcffff;
+    --header_bkgr_color: transparent;
+    --submenu_bkgr_color: #fcffff;
+    --footer_bkgr_color: #e3f3fb;
+    --border_color: #cccccc;
+    --nav_text_color: #ffffff;
+    --body_text_color: #000000;
+    --body_link_color: #010e45;
+    --body_link_hover_color: #059BD8;
+    --button_bkgr_color: #1C5E82;
+    --button_hover_bkgr_color: #059BD8;
+    --button_text_color: #FFFFFF;
+}
+
+/* Universal base styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
+    background: #181818;
+    color: var(--body_text_color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar styles for Webkit browsers */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+}
+
+[data-scroll-container]::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+}
+
+.c-scrollbar {
+    z-index: 3;
+}
+
+.c-scrollbar_thumb {
+    background-color: #696969 !important;
+    width: 6px !important;
+    opacity: 1 !important;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 1;
+}
+
+/* Header styles */
+#header {
+    opacity: 1;
+    background: var(--header_bkgr_color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px 5%;
+}
+
+.back-button a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--nav_text_color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.back-button a:hover {
+    color: var(--body_link_hover_color);
+}
+
+.back-button a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.back-button a:hover i {
+    transform: translateX(-5px);
+}
+
+#topnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#topnav ul li {
+    margin: 0 0px;
+}
+
+#topnav ul li a {
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    color: var(--nav_text_color);
+    text-decoration: none;
+    position: relative;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+#topnav ul li a .text {
+    font-size: 14px;
+
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+#topnav ul li:hover > a {
+    color: var(--body_link_hover_color);
+}
+
+#topnav ul li a .text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background: var(--body_link_hover_color);
+    transition: width 0.5s ease;
+}
+
+#topnav ul li:hover .text::after {
+    width: 100%;
+}
+
+/* Intro section styles */
+#intro {
+    background-color: #181818;
+    height: auto;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color: #ffffff;
+}
+
+.intro-text {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 4em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.intro-text p, .social-icons {
+    padding: 0 0 0 10%;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+}
+
+.intro-text p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Social icons */
+.social-icons {
+    padding-left: 10%;
+    text-align: center;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-right: 50px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--body_link_hover_color);
+}
+
+/* Features section styles */
+#features {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 50px 12%;
+    text-align: left;
+}
+
+#features h2 {
+    font-size: 3em;
+    font-weight: 900;
+    margin-bottom: 50px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+#features ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0 auto 20px;
+    max-width: 800px;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    #intro {
+        padding: 0px 0px 20px 0px;
+    }
+
+    .intro-content {
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        width: 100%;
+        padding-left: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .intro-text h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .intro-text p {
+        padding: 0px 5% 0px 5%;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin-right: 40px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container, #topnav {
+        margin-bottom: 0;
+    }
+
+    #topnav {
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .email-link {
+        width: 115px;
+    }
+
+    #features {
+        padding: 30px 5%;
+        text-align: center;
+    }
+
+    #features h2 {
+        font-size: 2em;
+    }
+
+    #features ul {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    #topnav {
+        position: relative;
+        right: auto;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #topnav ul {
+        flex-direction: row;
+    }
+}
+
+/* Ensure text color for header items */
+#header .back-button a, #header .email-link {
+    color: #FFFFFF !important;
+}
