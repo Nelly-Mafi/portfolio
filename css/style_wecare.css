@@ -92,7 +92,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 10px 5%;
+    padding: 30px 5%;
 }
 
 .back-button a {
@@ -124,55 +124,18 @@ body::-webkit-scrollbar-thumb {
     justify-content: flex-end;
 }
 
-#topnav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-#topnav ul li {
-    margin: 0 0px;
-}
-
-#topnav ul li a {
-    padding: 30px 0px;
-    display: flex;
-    align-items: center;
-    color: var(--nav_text_color);
-    text-decoration: none;
-    position: relative;
-    line-height: 1.5;
-    white-space: nowrap;
-}
-
-#topnav ul li a .text {
+.about-link {
     font-size: 14px;
-
-    display: inline-block;
-    position: relative;
     font-weight: 700;
-    color: #ffffff;
-}
-
-#topnav ul li:hover > a {
-    color: var(--body_link_hover_color);
-}
-
-#topnav ul li a .text::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0px;
-    left: 0;
-    background: var(--body_link_hover_color);
-    transition: width 0.5s ease;
-}
-
-#topnav ul li:hover .text::after {
-    width: 100%;
+    color: var(--button_text_color); /* Default color */
+    text-decoration: none;
+    padding: 10px 0px; /* Adjust padding to look like a button */
+    border-radius: 20px; /* Rounded corners */
+    width: 115px; /* Fixed width for smaller screens */
+    text-align:right; /* Center text within the fixed width container */
+    height: 40px; /* Ensure button maintains the same height */
+    position: relative;
+    overflow: hidden; /* Hide overflow for animation */
 }
 
 /* Intro section styles */
@@ -322,7 +285,7 @@ body::-webkit-scrollbar-thumb {
         justify-content: flex-end;
     }
 
-    .email-link {
+    .about-link {
         width: 115px;
     }
 
@@ -359,6 +322,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Ensure text color for header items */
-#header .back-button a, #header .email-link {
+#header .back-button a, #header .about-link {
     color: #FFFFFF !important;
 }
