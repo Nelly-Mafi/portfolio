@@ -214,23 +214,20 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     margin: 0 auto;
     height: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 90%;
 }
 
 
 .project-info-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     margin: 0 auto;
-    max-width: 1200px;
     padding: 20px;
     margin-bottom: 40px;
 }
 
 .project-top-section {
-    margin: 80px 20px 0 100px;
+    margin: 80px 8% 0 8%;
     display: flex;
     flex-direction: column;
     font-family: 'Raleway', sans-serif; /* Added font */
@@ -252,10 +249,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .project-bottom-section {
-    margin: 30px 20px 0 100px;
+    margin: 50px 8% 0 8%;
     display: flex;
     justify-content: space-between;
-    gap: 150px;
+    gap: 5%;
 }
 
 .project-intro-text {
@@ -335,6 +332,8 @@ body::-webkit-scrollbar-thumb {
     gap: 25px;
     padding: 0px;
     font-family: 'Poppins', sans-serif; /* Added font */
+    margin-left: auto; /* Pushes the .additional-info container to the right end */
+    max-width: fit-content; /* Ensures the container only takes up as much space as needed */
 }
 
 .info-section h2 {
@@ -467,6 +466,8 @@ body::-webkit-scrollbar-thumb {
     }
 
     .additional-info {
+        margin-left: 0;
+        max-width: 100%;
         margin-bottom: 0;
         flex: 1;
         gap: 20px; /* Space between sections */
