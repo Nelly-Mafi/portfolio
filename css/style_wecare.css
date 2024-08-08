@@ -209,6 +209,15 @@ body::-webkit-scrollbar-thumb {
 
 
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 
 .project-info-container {
     display: flex;
@@ -274,9 +283,9 @@ body::-webkit-scrollbar-thumb {
 
 
 
-.try-it-button a {
-    width: 75px;
-    margin: 80px 0 0 0;
+.try-software-button a {
+    width: 140px;
+    margin: 40px 0 0 0;
     font-size: 14px;
     font-weight: 700;
     color:#000;
@@ -286,15 +295,36 @@ body::-webkit-scrollbar-thumb {
     transition: color 0.3s ease;
 }
 
-.try-it-button a i {
+.try-software-button a i {
     margin-left: 8px;
     transition: transform 0.3s ease;
 }
 
-.try-it-button a:hover i {
+.try-software-button a:hover i {
     transform: translateX(5px);
 }
 
+
+.try-app-button a {
+    width: 90px;
+    margin: 40px 0 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color:#000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.try-app-button a i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.try-app-button a:hover i {
+    transform: translateX(5px);
+}
 
 
 
@@ -432,7 +462,7 @@ body::-webkit-scrollbar-thumb {
         padding: 0; /* Remove padding */
     }
 
-    .try-it-button a {
+    .try-software-button a {
         margin-top: 40px;
     }
 
