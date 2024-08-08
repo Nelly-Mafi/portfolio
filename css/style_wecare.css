@@ -256,11 +256,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .project-intro-text {
-    max-width: 800px;
+    max-width: 70%;
     flex: 3;
     padding: 0px;
     font-family: 'Poppins', sans-serif; /* Added font */
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
