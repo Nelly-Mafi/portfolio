@@ -6,7 +6,7 @@
     --footer_bkgr_color: #e3f3fb;
     --border_color: #cccccc;
     --nav_text_color: #ffffff;
-    --body_text_color: #000000;
+    --body_text_color: #0D0D0D;
     --body_link_color: #010e45;
     --body_link_hover_color: #059BD8;
     --button_bkgr_color: #1C5E82;
@@ -23,7 +23,7 @@
 
 html, body {
     font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
-    background: #181818;
+    background: #ffffff;
     color: var(--body_text_color);
     margin: 0;
     padding: 0;
@@ -49,14 +49,17 @@ html, body {
     background: #555 !important;
 }
 
+/* High specificity to override any other styles */
 body::-webkit-scrollbar-thumb {
     background: #696969 !important;
 }
 
+/* Additional high specificity for Locomotive Scroll */
 [data-scroll-container]::-webkit-scrollbar-thumb {
     background: #696969 !important;
 }
 
+/* Specific Locomotive Scrollbar styles */
 .c-scrollbar {
     z-index: 3;
 }
@@ -67,12 +70,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 1 !important;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    opacity: 1;
-}
 
 /* Header styles */
 #header {
@@ -127,22 +124,39 @@ body::-webkit-scrollbar-thumb {
 .about-link {
     font-size: 14px;
     font-weight: 700;
-    color: var(--button_text_color); /* Default color */
+    color: var(--button_text_color);
     text-decoration: none;
-    padding: 10px 0px; /* Adjust padding to look like a button */
-    border-radius: 20px; /* Rounded corners */
-    width: 115px; /* Fixed width for smaller screens */
-    text-align:right; /* Center text within the fixed width container */
-    height: 40px; /* Ensure button maintains the same height */
+    padding: 10px 0px;
+    border-radius: 20px;
+    width: 115px;
+    text-align: right;
+    height: 40px;
     position: relative;
-    overflow: hidden; /* Hide overflow for animation */
+    overflow: hidden;
 }
 
-/* Intro section styles */
+#header .back-button a, #header .about-link {
+    color: #0D0D0D !important;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 1;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
 #intro {
-    background-color: #181818;
-    height: auto;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
+    margin-bottom: 0px;
     position: relative;
     z-index: 0;
     overflow: hidden;
@@ -153,175 +167,287 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     height: 100vh;
     width: 100%;
-    color: #ffffff;
+    color: #0D0D0D;
+    background-color: #059BD8;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Added font */
 }
 
-.intro-text {
+.intro-image {
     width: 100%;
-    padding: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-down i {
+    font-size: 14px;
+    color: #0D0D0D;
+}
+
+
+
+
+
+.project-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    text-align: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    margin-bottom: 40px;
 }
 
-.intro-text h1 {
-    font-size: 4em;
-    font-weight: 900;
-    margin-bottom: 20px;
-    color: #ffffff;
-    position: relative;
-    letter-spacing: -2px;
-    text-align: center;
+.project-top-section {
+    margin: 80px 20px 0 100px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif; /* Added font */
 }
 
-.intro-text p, .social-icons {
-    padding: 0 0 0 10%;
-    color: #ffffff;
-    position: relative;
-    text-align: center;
+.project-top-section h2 {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 
-.intro-text p {
-    font-size: 1.5em;
+.project-top-section h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Added font */
+    font-weight: 700;
+    font-size: 40px; /* Adjusted size */
+}
+
+.project-bottom-section {
+    margin: 30px 20px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.project-intro-text {
+    max-width: 800px;
+    flex: 3;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif; /* Added font */
+    font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 20px;
-    color: #ffffff;
 }
 
-/* Social icons */
-.social-icons {
-    padding-left: 10%;
-    text-align: center;
+.project-intro-text a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-decoration-thickness: 2px;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
-.social-icons a {
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-right: 50px;
+.project-intro-text a:hover {
+    color: inherit;
+}
+
+
+
+
+
+.try-it-button a {
+    width: 75px;
+    margin: 80px 0 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    color:#000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-    color: var(--body_link_hover_color);
+.try-it-button a i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* Features section styles */
-#features {
-    background-color: #181818;
-    color: #ffffff;
-    padding: 50px 12%;
-    text-align: left;
+.try-it-button a:hover i {
+    transform: translateX(5px);
 }
 
-#features h2 {
-    font-size: 3em;
-    font-weight: 900;
-    margin-bottom: 50px;
-    color: #ffffff;
-    line-height: 1.2;
+
+
+
+.additional-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif; /* Added font */
 }
 
-#features ul {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #ffffff;
-    margin: 0 auto 20px;
-    max-width: 800px;
+.info-section h2 {
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif; /* Added font */
 }
 
-/* Responsive media queries */
+.info-section p {
+    margin: 5px 0;
+    font-family: 'Poppins', sans-serif; /* Added font */
+}
+
+
+
+
+
+#video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Adjust padding as needed */
+}
+
+.video-content {
+    max-width: 1100px;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Ensure the video fits nicely */
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px; /* Match the parent container */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove video border */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
-    #intro {
-        padding: 0px 0px 20px 0px;
+    
+
+    .project-info-container {
+        padding: 60px 20px 20px 20px; /* Add padding for better layout */
     }
 
-    .intro-content {
-        height: 100vh;
-        flex-direction: column;
-        text-align: center;
+    .project-top-section {
+        margin: 20px 10px 0px 10px; /* Reduce margins */
     }
 
-    .intro-text {
-        width: 100%;
-        padding-left: 0;
-        margin-left: 0;
-        text-align: center;
+    .project-top-section h1 {
+        font-size: 28px; /* Smaller font size for headings */
     }
 
-    .intro-text h1 {
-        font-size: 3em;
-        text-align: center;
+    .project-bottom-section {
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Space between elements */
+        margin: 20px 10px; /* Adjust margins */
     }
 
-    .intro-text p {
-        padding: 0px 5% 0px 5%;
-        font-size: 1em;
-        text-align: center;
+    .project-intro-text, .additional-info {
+        margin-bottom: 20px;
     }
 
-    .social-icons {
-        text-align: center;
-        justify-content: center;
+    .project-intro-text {
+        max-width: 100%; /* Allow text to fill container */
+        padding: 0; /* Remove padding */
     }
 
-    .social-icons a {
-        margin-right: 40px;
+    .try-it-button a {
+        margin-top: 40px;
     }
 
-    .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo-container, #topnav {
+    .additional-info {
         margin-bottom: 0;
+        flex: 1;
+        gap: 20px; /* Space between sections */
     }
 
-    #topnav {
-        width: auto;
-        justify-content: flex-end;
+    .info-section {
+        margin-bottom: 20px; /* Space between info sections */
     }
 
-    .about-link {
-        width: 115px;
+    #video-section {
+        padding-top: 0;
+        padding-bottom: 0;
     }
-
-    #features {
-        padding: 30px 5%;
-        text-align: center;
-    }
-
-    #features h2 {
-        font-size: 2em;
-    }
-
-    #features ul {
-        font-size: 1em;
-    }
-}
-
-@media (min-width: 769px) {
-    #topnav {
-        position: relative;
-        right: auto;
-        height: auto;
-        width: auto;
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    #topnav ul {
-        flex-direction: row;
-    }
-}
-
-/* Ensure text color for header items */
-#header .back-button a, #header .about-link {
-    color: #FFFFFF !important;
 }
