@@ -95,6 +95,7 @@ body::-webkit-scrollbar-thumb {
 .back-button a {
     font-size: 14px;
     font-weight: 700;
+    letter-spacing: 1px;
     color: var(--nav_text_color);
     text-decoration: none;
     display: flex;
@@ -124,6 +125,7 @@ body::-webkit-scrollbar-thumb {
 .about-link {
     font-size: 14px;
     font-weight: 700;
+    letter-spacing: 1px;
     color: var(--button_text_color);
     text-decoration: none;
     padding: 10px 0px;
@@ -219,23 +221,41 @@ body::-webkit-scrollbar-thumb {
 
 
 .project-info-container {
-    display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 20px;
     margin-bottom: 40px;
+    /* new */
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: normal;
+    justify-content: flex-start;
 }
 
 .project-top-section {
-    margin: 80px 8% 0 8%;
+    margin: 80px 0% 0 0%;
     display: flex;
     flex-direction: column;
     font-family: 'Raleway', sans-serif; /* Added font */
+    /* new */
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 60%;
+    margin-left: 8.33333%;
+    right: auto;
+    left: auto;
 }
 
 .project-top-section h2 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
+    letter-spacing: 1px;
     margin: 0 0 10px 0;
     padding: 0;
 }
@@ -245,23 +265,35 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     font-family: 'Playfair Display', serif; /* Added font */
     font-weight: 700;
-    font-size: 40px; /* Adjusted size */
+    font-size: 50px; /* Adjusted size */
 }
 
 .project-bottom-section {
-    margin: 50px 8% 0 8%;
+    margin: 50px 0% 0 0%;
     display: flex;
     justify-content: space-between;
-    gap: 5%;
+    /* gap: 5%; */
 }
 
 .project-intro-text {
-    max-width: 70%;
+    /* max-width: 70%; */
     flex: 3;
     padding: 0px;
     font-family: 'Poppins', sans-serif; /* Added font */
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 8.33333%;
+    right: auto;
+    left: auto;
 }
 
 .project-intro-text a {
@@ -281,10 +313,11 @@ body::-webkit-scrollbar-thumb {
 
 
 .try-software-button a {
-    width: 140px;
+    width: 150px;
     margin: 40px 0 0 0;
     font-size: 14px;
     font-weight: 700;
+    letter-spacing: 1px;
     color:#000;
     text-decoration: none;
     display: flex;
@@ -303,10 +336,11 @@ body::-webkit-scrollbar-thumb {
 
 
 .try-app-button a {
-    width: 90px;
-    margin: 40px 0 0 0;
+    width: 100px;
+    margin: 20px 0 0 0;
     font-size: 14px;
     font-weight: 700;
+    letter-spacing: 1px;
     color:#000;
     text-decoration: none;
     display: flex;
@@ -332,20 +366,34 @@ body::-webkit-scrollbar-thumb {
     gap: 25px;
     padding: 0px;
     font-family: 'Poppins', sans-serif; /* Added font */
-    margin-left: auto; /* Pushes the .additional-info container to the right end */
-    max-width: fit-content; /* Ensures the container only takes up as much space as needed */
+    /* 
+    margin-left: auto; Pushes the .additional-info container to the right end
+    max-width: fit-content; Ensures the container only takes up as much space as needed 
+    */
+    /* new */
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    margin-left: 8.33333%;
+    right: auto;
+    left: auto;
 }
 
 .info-section h2 {
     font-weight: 800;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 1px;
     font-family: 'Raleway', sans-serif; /* Added font */
+    margin-bottom: 10px;
 }
 
 .info-section p {
-    margin: 5px 0;
     font-family: 'Poppins', sans-serif; /* Added font */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
 }
 
 
@@ -435,11 +483,25 @@ body::-webkit-scrollbar-thumb {
     
 
     .project-info-container {
-        padding: 60px 20px 20px 20px; /* Add padding for better layout */
+        border-style: solid;
+        padding: 60px 0px 20px 0px; /* Add padding for better layout */
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        padding: 0;
     }
 
     .project-top-section {
-        margin: 20px 10px 0px 10px; /* Reduce margins */
+        border-style: solid;
+        padding: 0;
+        margin: 70px 0% 0 0%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-top-section h2 {
+        font-size: 14px; /* Smaller font size for headings */
     }
 
     .project-top-section h1 {
@@ -447,22 +509,31 @@ body::-webkit-scrollbar-thumb {
     }
 
     .project-bottom-section {
+        border-style: solid;
         flex-direction: column; /* Stack content vertically */
         gap: 20px; /* Space between elements */
-        margin: 20px 10px; /* Adjust margins */
+        margin: 20px 0px; /* Adjust margins */
+
+        padding-left: 0px;
+        padding-right: 22.5px;
     }
 
-    .project-intro-text, .additional-info {
-        margin-bottom: 20px;
-    }
 
     .project-intro-text {
+        font-size: 15px;
+        font-weight: 400;
         max-width: 100%; /* Allow text to fill container */
         padding: 0; /* Remove padding */
     }
 
     .try-software-button a {
         margin-top: 40px;
+        font-size: 14px;
+    }
+
+    .try-app-button a {
+        margin-top: 20px;
+        font-size: 14px;
     }
 
     .additional-info {
@@ -474,7 +545,16 @@ body::-webkit-scrollbar-thumb {
     }
 
     .info-section {
-        margin-bottom: 20px; /* Space between info sections */
+        margin-bottom: 0px; /* Space between info sections */
+    }
+
+    .info-section h2 {
+        font-size: 14px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+        font-weight: 400;
     }
 
     #video-section {
