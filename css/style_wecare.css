@@ -31,6 +31,16 @@ html, body {
     overflow-x: hidden;
 }
 
+::selection {
+    background-color: #ACACAC; /* Background color for the selected text */
+}
+
+/* For Mozilla Firefox (which uses a different pseudo-element) */
+::-moz-selection {
+    background-color: #ACACAC;
+}
+
+
 /* Custom scrollbar styles for Webkit browsers */
 ::-webkit-scrollbar {
     width: 0px;
@@ -58,6 +68,20 @@ body::-webkit-scrollbar-thumb {
 [data-scroll-container]::-webkit-scrollbar-thumb {
     background: #696969 !important;
 }
+
+
+/* locomotive scroll */
+html.has-scroll-smooth {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+
+
 
 /* Specific Locomotive Scrollbar styles */
 .c-scrollbar {
@@ -162,29 +186,38 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     z-index: 0;
     overflow: hidden;
+    background-color: #059BD8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .intro-content {
     display: flex;
     align-items: center;
-    height: 100vh;
-    width: 100%;
     color: #0D0D0D;
-    background-color: #059BD8;
     text-align: center;
     font-family: 'Poppins', sans-serif; /* Added font */
+
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
 }
 
-.intro-image {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
+.intro-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 7vw; /* Adjust based on your design */
+    font-weight: 700;
+    margin: 0;
+    color: rgb(13, 13, 13); /* Adjust color as per your design */
 }
 
 .intro-image img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
+    display: block;
 }
 
 .scroll-down {
@@ -204,8 +237,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .scroll-down i {
-    font-size: 14px;
-    color: #0D0D0D;
+    font-size: 16px;
+    color: #059BD8;
 }
 
 
@@ -223,8 +256,8 @@ body::-webkit-scrollbar-thumb {
 .project-info-container {
     flex-direction: column;
     margin: 0 auto;
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 22.5px;
     /* new */
     margin-left: -22.5px;
     margin-right: -22.5px;
@@ -246,7 +279,7 @@ body::-webkit-scrollbar-thumb {
     padding-left: 22.5px;
     padding-right: 22.5px;
     flex: 0 0 50%;
-    max-width: 60%;
+    max-width: 50%;
     margin-left: 8.33333%;
     right: auto;
     left: auto;
@@ -265,11 +298,11 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     font-family: 'Playfair Display', serif; /* Added font */
     font-weight: 700;
-    font-size: 50px; /* Adjusted size */
+    font-size: 60px; /* Adjusted size */
 }
 
 .project-bottom-section {
-    margin: 50px 0% 0 0%;
+    margin: 50px 4.166665% 0 8.33333%;
     display: flex;
     justify-content: space-between;
     /* gap: 5%; */
@@ -289,9 +322,10 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     padding-left: 22.5px;
     padding-right: 22.5px;
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-left: 8.33333%;
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-left: 0%;
+    margin-right: 0%;
     right: auto;
     left: auto;
 }
@@ -336,7 +370,7 @@ body::-webkit-scrollbar-thumb {
 
 
 .try-app-button a {
-    width: 100px;
+    width: 95px;
     margin: 20px 0 0 0;
     font-size: 14px;
     font-weight: 700;
@@ -376,6 +410,7 @@ body::-webkit-scrollbar-thumb {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
     margin-left: 8.33333%;
+    margin-right: 0%;
     right: auto;
     left: auto;
 }
@@ -440,6 +475,62 @@ body::-webkit-scrollbar-thumb {
 
 
 
+.project-detail-bottom-section {
+    margin: 50px 4.166665% 0 8.33333%;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.project-detail-text {
+    flex: 3;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+}
+
+.project-detail-text h3{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.project-detail-additional-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 0%;
+    margin-right: 0%;
+    right: auto;
+    left: auto;
+}
+
+.project-detail-additional-info p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
 
 
 
@@ -480,11 +571,16 @@ body::-webkit-scrollbar-thumb {
 
 
 @media (max-width: 768px) {
+
+    .header-container {
+        padding: 10px 5%;
+    }
     
+    .scroll-down {
+        bottom: 70px;
+    }
 
     .project-info-container {
-        border-style: solid;
-        padding: 60px 0px 20px 0px; /* Add padding for better layout */
         flex-direction: column;
         margin: 0 auto;
         margin-bottom: 40px;
@@ -492,7 +588,6 @@ body::-webkit-scrollbar-thumb {
     }
 
     .project-top-section {
-        border-style: solid;
         padding: 0;
         margin: 70px 0% 0 0%;
         max-width: 100%;
@@ -505,43 +600,80 @@ body::-webkit-scrollbar-thumb {
     }
 
     .project-top-section h1 {
-        font-size: 28px; /* Smaller font size for headings */
+        font-size: 35px; /* Smaller font size for headings */
     }
 
     .project-bottom-section {
-        border-style: solid;
         flex-direction: column; /* Stack content vertically */
         gap: 20px; /* Space between elements */
         margin: 20px 0px; /* Adjust margins */
+    }
 
-        padding-left: 0px;
-        padding-right: 22.5px;
+    .project-detail-bottom-section {
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Space between elements */
+        margin: 20px 0px; /* Adjust margins */
     }
 
 
     .project-intro-text {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 400;
         max-width: 100%; /* Allow text to fill container */
-        padding: 0; /* Remove padding */
+        padding: 0px;
+        line-height: 1.6em;
+        margin-left: 0%;
+    }
+
+    .project-detail-text {
+        max-width: 100%; /* Allow text to fill container */
+        padding: 0px;
+        margin-left: 0%;
+    }
+
+    .project-detail-text h3{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5em;
     }
 
     .try-software-button a {
-        margin-top: 40px;
+        margin-top: 20px;
         font-size: 14px;
     }
 
     .try-app-button a {
         margin-top: 20px;
+        margin-bottom: 20px;
         font-size: 14px;
     }
 
     .additional-info {
+        padding: 0;
         margin-left: 0;
         max-width: 100%;
         margin-bottom: 0;
         flex: 1;
         gap: 20px; /* Space between sections */
+    }
+
+    .additional-info p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .project-detail-additional-info {
+        padding: 0;
+        margin-left: 0;
+        max-width: 100%;
+        margin-bottom: 0;
+        flex: 1;
+        gap: 20px; /* Space between sections */
+    }
+
+    .project-detail-additional-info p {
+        font-size: 16px;
+        font-weight: 400;
     }
 
     .info-section {
@@ -558,7 +690,6 @@ body::-webkit-scrollbar-thumb {
     }
 
     #video-section {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 0px 5%;
     }
 }
