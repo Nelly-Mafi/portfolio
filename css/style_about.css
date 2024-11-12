@@ -263,14 +263,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .intro-text h1 {
-    margin-left: -65px;
+    margin-left: -4.2vw;
     font-family: 'Playfair Display', serif; /* Added font */
-    font-size: 5.5em; /* Increase the font size */
+    font-size: 6vw; /* Increase the font size */
     font-weight: 900; /* Make the font bold */
-    margin-bottom: 20px;
+    margin-bottom: 2.5vh;
     color: #ffffff; /* White color for the heading */
     position: relative; /* Position relative for regular positioning */
-    letter-spacing: -2px; /* Adjust letter spacing to match the style */
+    letter-spacing: 0vw; /* Adjust letter spacing to match the style */
     text-align: left; /* Align text to the left */
 }
 
@@ -284,10 +284,10 @@ body::-webkit-scrollbar-thumb {
 
 
 .intro-text p {
-    font-size: 1.5em; /* Adjust font size for paragraph */
+    font-size: 1.5vw; /* Adjust font size for paragraph */
     font-weight: 600;
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 5vh;
     color: #ffffff; /* White text color */
 }
 
@@ -302,8 +302,8 @@ body::-webkit-scrollbar-thumb {
 
 .social-icons a {
     color: #ffffff; /* White color for the social icons */
-    font-size: 1.5em;
-    margin-right: 50px;
+    font-size: 1.7vw;
+    margin-right: 2.5vw;
     transition: color 0.3s ease; /* Smooth transition for color */
 }
 
@@ -396,7 +396,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     font-family: 'Playfair Display', serif; /* Added font */
     font-weight: 700;
-    font-size: 60px; /* Adjusted size */
+    font-size: 3.125vw; /* Adjusted size */
 }
 
 
@@ -427,7 +427,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-detail-text h3{
-    font-size: 14px;
+    font-size: 1.042vw;
     font-weight: 700;
     line-height: 1.5em;
 }
@@ -457,7 +457,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-detail-additional-info p {
-    font-size: 20px;
+    font-size: 1.354vw;
     font-weight: 600;
     line-height: 1.6em;
 }
@@ -543,7 +543,8 @@ div.horizontal {
 .media-subtitle {
     position: relative;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.9vw;
+    font-weight: 300;
     color: #ffffff; /* White text color */
     margin-top: 15px; /* Adjust space between video and subtitle */
     font-family: 'Poppins', sans-serif;
@@ -633,7 +634,7 @@ div.horizontal {
     padding: 0;
     font-family: 'Playfair Display', serif; /* Added font */
     font-weight: 700;
-    font-size: 60px; /* Adjusted size */
+    font-size: 3.125vw; /* Adjusted size */
 }
 
 
@@ -665,7 +666,7 @@ div.horizontal {
 }
 
 .project-detail-text h3{
-    font-size: 22px;
+    font-size: 1.354vw;
     font-weight: 700;
     line-height: 1.5em;
 }
@@ -694,7 +695,7 @@ div.horizontal {
 }
 
 .project-detail-additional-info p {
-    font-size: 20px;
+    font-size: 1.354vw;
     font-weight: 400;
     line-height: 1.6em;
 }
@@ -724,7 +725,7 @@ div.horizontal {
 }
 
 .work-history-header h3 {
-    font-size: 2em;
+    font-size: 1.875vw;
     font-weight: 700;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -732,7 +733,7 @@ div.horizontal {
 
 .work-history-header p {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.18vw;
     font-weight: 400;
     margin-bottom: 40px;
     line-height: 1.6;
