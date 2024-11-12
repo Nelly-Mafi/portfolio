@@ -1,0 +1,797 @@
+/* Root definitions for color themes */
+:root {
+    --body_bkgr_color: #fcffff;
+    --header_bkgr_color: transparent;
+    --submenu_bkgr_color: #fcffff;
+    --footer_bkgr_color: #e3f3fb;
+    --border_color: #cccccc;
+    --nav_text_color: #2f322a;
+    --body_text_color: #000000;
+    --body_link_color: #010e45;
+    --body_link_hover_color: #059BD8;
+    --button_bkgr_color: #1C5E82;
+    --button_hover_bkgr_color: #059BD8;
+    --button_text_color: #FFFFFF;
+}
+
+/* Universal base styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
+    background: #000000;
+    color: var(--body_text_color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    cursor: default;
+}
+
+::selection {
+    background-color: #ACACAC; /* Background color for the selected text */
+}
+
+/* For Mozilla Firefox (which uses a different pseudo-element) */
+::-moz-selection {
+    background-color: #ACACAC;
+}
+
+body.no-scroll {
+    overflow: hidden; /* Disable vertical scrolling */
+}
+
+/* Scroll container styles */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    /* transform: translateY(-100%); */
+    opacity: 0; /* Start with full transparency */
+    transition: transform 1s ease, opacity 1s ease; /* Set up transition properties */
+}
+
+.wrapper.visible {
+    /* transform: translateY(0); */
+    opacity: 1;
+}
+
+
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+#loading-screen.white-bg {
+    background-color: #fff; /* Change background to white */
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Animation Container for "NELLY MAFI" Text */
+#load {
+    position: absolute;
+    width: 600px;
+    height: 36px;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    overflow: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#load div {
+    position: absolute;
+    width: 20px;
+    height: 36px;
+    opacity: 0;
+    font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5em;
+    animation: move 4s linear forwards;
+    -o-animation: move 4s linear forwards;
+    -moz-animation: move 4s linear forwards;
+    -webkit-animation: move 4s linear forwards;
+    transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    color: #35C4F0;
+}
+
+/* Delays for Each Character to Stagger Animation */
+#load div:nth-child(2) { animation-delay: 0.2s; }
+#load div:nth-child(3) { animation-delay: 0.4s; }
+#load div:nth-child(4) { animation-delay: 0.6s; }
+#load div:nth-child(5) { animation-delay: 0.8s; }
+#load div:nth-child(6) { animation-delay: 1s; }
+#load div:nth-child(7) { animation-delay: 1.6s; }
+#load div:nth-child(8) { animation-delay: 1.8s; }
+#load div:nth-child(9) { animation-delay: 2s; }
+#load div:nth-child(10) { animation-delay: 2.2s; }
+#load div:nth-child(11) { animation-delay: 2.4s; }
+
+@keyframes move {
+    0% { right: 0; opacity: 0; }
+    35% { right: 41%; transform: rotate(0deg); opacity: 1; }
+    65% { right: 59%; transform: rotate(0deg); opacity: 1; }
+    100% { right: 100%; transform: rotate(-180deg); opacity: 0; }
+}
+
+/* Keyframe variations for cross-browser compatibility */
+@-moz-keyframes move { /* same as above */ }
+@-webkit-keyframes move { /* same as above */ }
+@-o-keyframes move { /* same as above */ }
+
+
+
+
+/* Canvas container setup */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a;
+    z-index: 0; /* Ensure it's behind all other elements */
+    pointer-events: auto; /* Enable pointer events on canvas */
+}
+
+/* Ensure the canvas can detect mouse events for the ripple effect */
+#background-canvas {
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    pointer-events: auto;
+}
+
+/* Temporarily disable pointer events on other layers */
+#header, .swiper-container, .project-info {
+    pointer-events: none;
+}
+
+/* Re-enable specific interactive elements to ensure usability */
+#header a, .swiper-pagination, .swiper-container a {
+    pointer-events: auto;
+}
+
+
+
+
+
+/* Header styles */
+#header {
+    opacity: 1;
+    background: var(--header_bkgr_color); /* Keep background transparent */
+    position: fixed; /* Ensure the header is fixed */
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto; /* Fixed height for the header */
+    box-sizing: border-box; /* Include padding and border in height */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center;
+    height: 100%;
+    padding: 0px 5%; /* Consistent padding */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    user-select: none;
+}
+
+#header .logo {
+    height: 30px; /* Set logo height */
+}
+
+.site-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: 0.5px;
+    color: #ffffff; /* Default color */
+    margin-left: 10px; /* Space between logo and name */
+    user-select: none;
+}
+
+/* Navigation styles */
+#topnav {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: 0.5px;
+    background-color: transparent;
+    position: relative;
+    display: flex; /* Existing styles */
+    align-items: center;
+    justify-content: flex-end; /* Existing styles */
+    margin: 0; /* Removed property */
+}
+
+#topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display as flex for larger screens */
+    align-items: center; /* Center items vertically */
+}
+
+#topnav ul li {
+    margin: 0 0px;
+}
+
+#topnav ul li a {
+    padding: 30px 0px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    color: var(--nav_text_color);
+    text-decoration: none;
+    position: relative;
+    line-height: 1.5;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#topnav ul li a .text {
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+    user-select: none;
+}
+
+#topnav ul li:hover > a {
+    color: var(--body_link_hover_color);
+}
+
+
+
+
+
+
+
+
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; /* Adjust for fixed header */
+}
+
+
+
+
+
+
+/* Intro section with adjusted padding */
+#intro {
+    height: 100vh; /* Full viewport height */
+    padding: 0; /* Remove padding to ensure full coverage */
+    position: relative; /* Relative positioning for layering */
+    z-index: 0; /* Ensure intro is behind the header */
+    overflow: hidden; /* Ensure video covers the whole section */ 
+    /*  
+    background-image: url("../assets/images/home.jpeg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    */
+}
+
+
+
+/* Intro content styling */
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height: 100%;
+    color: #ffffff;
+}
+
+.intro-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 8vw; /* Adjust based on screen size */
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.intro-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw; /* Adjust size as needed */
+    max-width: 600px;
+    line-height: 1.5;
+    color: #cccccc;
+    margin-bottom: 3rem;
+    user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    transition: background-color 0.5s ease;
+}
+
+
+
+
+/* Swiper container full height */
+#project-slider {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Centering each slide content */
+.swiper-slide {
+    background: transparent; /* Ensure slide backgrounds are transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+
+/* Card and Description Wrapper */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* Card Styling for Centering */
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 80%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centers card horizontally */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Center the card vertically and horizontally */
+.swiper-slide .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Moves the card to the exact center */
+}
+
+/* Project Description Styling (below each project card) */
+.project-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    color: #cccccc;
+    text-align: center;
+    margin-top: 0%;
+    padding: 0 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Center the card vertically and horizontally */
+.swiper-slide .project-description {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Moves the card to the exact center */
+}
+
+/* Project Title */
+.project-title-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 5px; /* Spacing between title and subtitle */
+}
+
+/* Project Subtitle */
+.project-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    color: #cccccc;
+    max-width: 700px;
+}
+
+.project-description .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Fade in from 0 opacity */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Fade out to 0 opacity */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card.card-image {
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 50%; /* Full height of the card */
+    width: 100%; /* Full width of the card */
+    padding: 40px; /* Adjust padding for content */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Color for text on the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+
+
+
+/* Hover Effect 
+.project-card .card:hover {
+    transform: translate(-50%, -50%) scale(1.05); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place behind all content */
+    pointer-events: none; /* Ensures the GIF doesn't interfere with user interactions */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Project Info Styling */
+.project-info {
+    width: 100%;
+    position: absolute;
+    bottom: 30%;
+    left: 0px;
+    color: #ffffff;
+    z-index: 10;
+    text-align: left;
+}
+
+/* Container for the line and title */
+.project-line-title {
+    display: flex;
+    align-items: center; /* Vertically align line and title */
+    margin-bottom: 20px; /* Space between title/line and description */
+}
+
+/* Animation for line expansion */
+@keyframes line-grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10%;
+    }
+}
+
+/* Animation for line shrinking */
+@keyframes line-shrink {
+    from {
+        width: 10%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* Define initial and animated styles */
+.line {
+    width: 0; /* Start with 0 width */
+    height: 2.5px;
+    background-color: #ffffff;
+    margin-right: 30px; /* Space between line and title */
+    transition: width 0.5s ease; /* Smooth transition */
+}
+
+.line.grow {
+    animation: line-grow 0.5s forwards; /* Apply the grow animation */
+}
+
+.line.shrink {
+    animation: line-shrink 0.5s forwards; /* Apply the shrink animation */
+}
+
+
+
+/* Title styling */
+.project-info .project-title {
+    font-weight: 700;
+    font-size: 6vw;
+    text-transform: uppercase;
+    margin: 0; /* Remove bottom margin */
+}
+
+
+/* Slide in from the top (for scrolling down) */
+.slide-in-down {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide out to the bottom (for scrolling down) */
+.slide-out-down {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide in from the bottom (for scrolling up) */
+.slide-in-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide out to the top (for scrolling up) */
+.slide-out-up {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Initial states */
+.slide-in-start-down {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.slide-in-start-up {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Position pagination on the right side, with more spacing */
+#project-slider .swiper-pagination {
+    padding: 40px;
+    right: 5% !important;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Style each bullet as a horizontal line */
+.swiper-pagination .swiper-pagination-bullet {
+    width: 20px;
+    height: 5px; /* Slim height for line */
+    background-color: #b5b4b4; /* Gray for inactive lines */
+    /* transition: background-color 0.3s ease, width 0.3s ease; */
+    transition: scale 0.6s ease;
+    border-radius: 10px; /* Rounds the edges to look smoother */
+}
+
+/* Active bullet style */
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ffffff; /* Full white for active line */
+    width: 30px; /* Slightly longer to emphasize active state */
+}
+
+/* When hovering over the pagination container, set all bullets to 50px width */
+.swiper-pagination:hover .swiper-pagination-bullet {
+    scale: 2;
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        max-width: 90%;
+    }
+    .card-title {
+        font-size: 5vw;
+    }
+    .card-description {
+        font-size: 3.5vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    #header {
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .header-container {
+        flex-direction: row; /* Keep elements in a row */
+        justify-content: space-between; /* Distribute space */
+        align-items: center; /* Vertically center items */
+    }
+
+    .logo-container,
+    #topnav {
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    #topnav {
+        width: auto; /* Keep width auto */
+        justify-content: flex-end; /* Align to the right */
+    }
+}
+
+@media (min-width: 769px) {
+    #topnav {
+        position: relative;
+        right: auto;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end; /* Align to the right */
+    }
+
+    #topnav ul {
+        flex-direction: row;
+    }
+}
+
+
+

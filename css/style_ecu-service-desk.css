@@ -1,0 +1,944 @@
+/* Root definitions for color themes */
+:root {
+    --body_bkgr_color: #fcffff;
+    --header_bkgr_color: transparent;
+    --submenu_bkgr_color: #fcffff;
+    --footer_bkgr_color: #e3f3fb;
+    --border_color: #cccccc;
+    --nav_text_color: #ffffff;
+    --body_text_color: #0D0D0D;
+    --body_link_color: #010e45;
+    --body_link_hover_color: #059BD8;
+    --button_bkgr_color: #1C5E82;
+    --button_hover_bkgr_color: #059BD8;
+    --button_text_color: #FFFFFF;
+}
+
+/* Universal base styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', Verdana, Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--body_text_color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: #ACACAC; /* Background color for the selected text */
+}
+
+/* For Mozilla Firefox (which uses a different pseudo-element) */
+::-moz-selection {
+    background-color: #ACACAC;
+}
+
+
+/* Custom scrollbar styles for Webkit browsers */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+/* High specificity to override any other styles */
+body::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+}
+
+/* Additional high specificity for Locomotive Scroll */
+[data-scroll-container]::-webkit-scrollbar-thumb {
+    background: #696969 !important;
+}
+
+
+/* locomotive scroll */
+html.has-scroll-smooth {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+
+
+
+/* Specific Locomotive Scrollbar styles */
+.c-scrollbar {
+    z-index: 3;
+}
+
+.c-scrollbar_thumb {
+    background-color: #696969 !important;
+    width: 6px !important;
+    opacity: 1 !important;
+}
+
+
+/* Header styles */
+#header {
+    opacity: 1;
+    background: var(--header_bkgr_color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 30px 5%;
+}
+
+.back-button a {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--nav_text_color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.back-button a:hover {
+    color: var(--body_link_hover_color);
+}
+
+.back-button a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.back-button a:hover i {
+    transform: translateX(-5px);
+}
+
+#topnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.about-link {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--button_text_color);
+    text-decoration: none;
+    padding: 10px 0px;
+    border-radius: 20px;
+    width: 115px;
+    text-align: right;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+#header .back-button a, #header .about-link {
+    color: #0D0D0D !important;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 1;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#intro {
+    padding: 0;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-color: #009EAD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* color: #0D0D0D; */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Added font */
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.intro-title h1 {
+    font-family: 'Poppins', serif;
+    font-size: 7vw; /* Adjust based on your design */
+    font-weight: 600;
+    /* margin-top: -30vh; */
+    /* margin-right: 70vw; */
+    /* text-align: left;*/
+    /* color: rgb(13, 13, 13); */
+    color: #0D0D0D;
+}
+
+
+.intro-image img {
+    margin-top: 10vh;
+    max-width: 45vw;
+    border-radius: 8px;
+    height: auto;
+    display: block;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-down i {
+    font-size: 16px;
+    color: #009EAD;
+}
+
+
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: auto;
+    width: 90%;
+}
+
+
+.project-info-container {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 82.5px;
+    /* new */
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: normal;
+    justify-content: flex-start;
+}
+
+.project-top-section {
+    margin: 80px 0% 0 0%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif; /* Added font */
+    /* new */
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 8.33333%;
+    right: auto;
+    left: auto;
+}
+
+.project-top-section h2 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.project-top-section h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Added font */
+    font-weight: 700;
+    font-size: 60px; /* Adjusted size */
+}
+
+.project-bottom-section {
+    margin: 50px 4.166665% 0 8.33333%;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 5%; */
+}
+
+.project-intro-text {
+    /* max-width: 70%; */
+    flex: 3;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif; /* Added font */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-left: 0%;
+    margin-right: 0%;
+    right: auto;
+    left: auto;
+}
+
+.project-intro-text a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-decoration-thickness: 2px;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.project-intro-text a:hover {
+    color: inherit;
+}
+
+
+
+
+
+
+.try-it-button a {
+    width: 80px;
+    margin: 40px 0 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color:#000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.try-it-button a i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.try-it-button a:hover i {
+    transform: translateX(5px);
+}
+
+
+
+
+
+
+.additional-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif; /* Added font */
+    /* 
+    margin-left: auto; Pushes the .additional-info container to the right end
+    max-width: fit-content; Ensures the container only takes up as much space as needed 
+    */
+    /* new */
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    margin-left: 8.33333%;
+    margin-right: 0%;
+    right: auto;
+    left: auto;
+}
+
+.info-section h2 {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-family: 'Raleway', sans-serif; /* Added font */
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-family: 'Poppins', sans-serif; /* Added font */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+
+
+
+
+
+
+
+
+
+
+
+#video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20x; /* Adjust padding as needed */
+    margin-bottom: 82.5px; /* 22.5 + 60 */
+}
+
+.video-content {
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Ensure the video fits nicely */
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (calculated as 9/16 = 0.5625) */
+    overflow: hidden;
+    border-radius: 10px; /* Match the parent container */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove video border */
+}
+
+.video-subtitle {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    margin-top: 15px; /* Adjust space between video and subtitle */
+    font-family: 'Poppins', sans-serif;
+    font-style: italic; /* Make the subtitle italic */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.project-detail-top-section {
+    margin: 0px 0% 0 0%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif; /* Added font */
+    /* new */
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 8.33333%;
+    right: auto;
+    left: auto;
+}
+
+.project-detail-top-section h2 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.project-detail-top-section h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif; /* Added font */
+    font-weight: 700;
+    font-size: 60px; /* Adjusted size */
+}
+
+
+
+.project-detail-bottom-section {
+    margin: 50px 10% 0 8.33333%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap = I added this for image for visual identity */
+    justify-content: space-between;
+}
+
+.project-detail-text {
+    flex: 3;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+}
+
+.project-detail-text h3{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.project-detail-additional-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 0%;
+    margin-right: 0%;
+    right: auto;
+    left: auto;
+}
+
+.project-detail-additional-info p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+
+
+
+
+
+
+
+#image-slideshow-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px; /* Adjust padding as needed = change 20px to 0% and get rid of max-width: 1100px; */
+    margin-bottom: 82.5px;
+}
+
+
+.image-content {
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Ensure the images fit nicely */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px; /* Match the parent container */
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none; /* Remove border */
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.image-wrapper img.active {
+    opacity: 1;
+    z-index: 1; /* Ensure the active image is on top */
+
+}
+
+.image-subtitle {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    margin-top: 15px; /* Adjust space between images and subtitle */
+    font-family: 'Poppins', sans-serif;
+    font-style: italic; /* Make the subtitle italic */
+}
+
+
+
+
+
+
+
+#image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px; /* Ensure this matches the padding of your previous media sections */
+    margin-bottom: 82.5px; /* Ensure this matches the margin of your previous media sections */
+}
+
+.image-section-content {
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Ensure the image fits nicely */
+}
+
+.image-section-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px; /* Match the parent container */
+}
+
+.image-section-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none; /* Remove border */
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.image-subtitle {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    margin-top: 15px; /* Adjust space between image and subtitle */
+    font-family: 'Poppins', sans-serif;
+    font-style: italic; /* Make the subtitle italic */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.identity-detail-left {
+    flex: 3;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* new */
+    box-sizing: border-box;
+    min-height: 1px;
+    position: relative;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+}
+
+.identity-detail-left h2{
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 30px 0 10px 0;
+    padding: 0;
+}
+
+.identity-image {
+    margin-top: 50px;
+    text-align: left; /* Center the image horizontally */
+}
+
+.identity-image img {
+    max-width: 100%; /* Ensure the image is responsive and doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.project-detail-additional-info h2 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 30px 0 10px 0;
+    padding: 0;
+}
+
+.colors-section {
+    margin-top: 22.5px;
+}
+
+.color-block {
+    margin: 10px 0;
+    padding: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .header-container {
+        padding: 10px 5%;
+    }
+    
+    .scroll-down {
+        bottom: 70px;
+    }
+
+    .project-info-container {
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+
+    .project-top-section {
+        padding: 0;
+        margin: 70px 0% 0 0%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-top-section h2 {
+        font-size: 14px; /* Smaller font size for headings */
+    }
+
+    .project-top-section h1 {
+        font-size: 35px; /* Smaller font size for headings */
+    }
+
+    .project-detail-top-section {
+        padding: 0;
+        margin: 70px 0% 0 0%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-detail-top-section h2 {
+        font-size: 14px; /* Smaller font size for headings */
+    }
+
+    .project-detail-top-section h1 {
+        font-size: 35px; /* Smaller font size for headings */
+    }
+
+    .project-bottom-section {
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Space between elements */
+        margin: 20px 0px; /* Adjust margins */
+    }
+
+    .project-detail-bottom-section {
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Space between elements */
+        margin: 20px 0px; /* Adjust margins */
+    }
+
+
+    .project-intro-text {
+        font-size: 16px;
+        font-weight: 400;
+        max-width: 100%; /* Allow text to fill container */
+        padding: 0px;
+        line-height: 1.6em;
+        margin-left: 0%;
+    }
+
+    .project-detail-text {
+        max-width: 100%; /* Allow text to fill container */
+        padding: 0px;
+        margin-left: 0%;
+    }
+
+    .project-detail-text h3{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5em;
+    }
+
+    .identity-detail-left {
+        max-width: 100%; /* Allow text to fill container */
+        padding: 0px;
+        margin-left: 0%;
+    }
+
+    .identity-detail-left h2{
+        font-size: 14px; /* Smaller font size for headings */
+    }
+
+    .project-detail-additional-info h2 {
+        font-size: 14px; /* Smaller font size for headings */
+    }
+    .try-it-button a {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+
+    .additional-info {
+        padding: 0;
+        margin-left: 0;
+        max-width: 100%;
+        margin-bottom: 0;
+        flex: 1;
+        gap: 20px; /* Space between sections */
+    }
+
+    .additional-info p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .project-detail-additional-info {
+        padding: 0;
+        margin-left: 0;
+        max-width: 100%;
+        margin-bottom: 0;
+        flex: 1;
+        gap: 20px; /* Space between sections */
+    }
+
+    .project-detail-additional-info p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .info-section {
+        margin-bottom: 0px; /* Space between info sections */
+    }
+
+    .info-section h2 {
+        font-size: 14px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    #video-section {
+        padding: 0px 5%;
+    }
+}
