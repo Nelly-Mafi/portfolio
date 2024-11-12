@@ -5,63 +5,158 @@
     <title>Nelly Mafi - Interaction Designer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style_home.css" type="text/css">
-    <!-- Set favicon to the same image as the logo -->
     <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<body data-bg="light">
+
+<body>
+
+    
     <div id="loading-screen">
-        <div class="loading-text">
-            <div class="loading-title">NELLY MAFI</div>
-            <div class="loading-subtitle">Interaction Designer</div>
-            <div class="loading-bar"></div>
+        <div id="load">
+            <div>N</div>
+            <div>E</div>
+            <div>L</div>
+            <div>L</div>
+            <div>Y</div>
+            <div></div>
+            <div></div>
+            <div>M</div>
+            <div>A</div>
+            <div>F</div>
+            <div>I</div>
         </div>
     </div>
-    <div id="header">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="assets/images/logo.png" alt="Logo" class="logo">
-                <span class="site-name">NELLY MAFI</span>
-            </div>
-            <div id="topnav">
-                <ul>
-                    <li><a href="about.html"><span class="text">ABOUT</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    
+    
+
+
+    <!-- Main Content Wrapper -->
     <div class="wrapper">
-        <div id="intro" class="section">
-            <div class="video-container">
-                <video autoplay muted loop>
-                    <source src="assets/videos/lotus.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="content-container">
-                <div class="hero__strap">
-                    <h2 class="hero__title">
-                        <span class="js-letters">Innovation</span>
-                    </h2>
-                    <h3 class="hero__subtitle">Creativity</h3>
-                    <p><a href="wecare.html">we care</p>
-                    <p><a href="ecu-service-desk.html">ecu service desk</p>
+
+        <!-- Canvas Container for Background -->
+        <div id="canvas-container">
+            <canvas id="background-canvas"></canvas>
+        </div>
+
+        <!-- Header -->
+        <div id="header">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo">
+                    <span class="site-name">NELLY MAFI</span>
+                </div>
+                <div id="topnav">
+                    <ul>
+                        <li><a href="about.html"><span class="text">ABOUT</span></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="white-spacer"></div>
-        <div id="message" class="section">
-            <h2 id="welcomeText">Welcome to the Future</h2>
-        </div>
-        <div class="spacer"></div>
+
+        <!-- Swiper container for full-page vertical navigation -->
+        <section id="project-slider" class="swiper-container">
+            
+
+            <div class="swiper-wrapper">
+                <!-- Intro Slide -->
+                <div class="swiper-slide intro-slide">
+                    <div class="intro-content">
+                        <div class="intro-title">
+                            MULTI-<br>DISCIPLINARY<br>DESIGNER
+                        </div>
+                        <div class="intro-subtitle">
+                            Creative thinking and problem solving are where my mind wanders, using my knowledge and passion for design as my medium.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Slides with data-title and description directly below the card -->
+                <!-- <div class="swiper-slide project-card" data-bg-color="#111221" data-progress-color="#ff28d7" data-title="GEXPLORE"> -->
+                <div class="swiper-slide project-card" data-title="GEXPLORE">
+                    <div class="card-container">
+                        <a href="gexplore.html"> <!-- Link to GEXPLORE page -->
+                            <div class="card card-image" style="background-image: url('assets/images/gexplore-project-image.jpeg');"></div>
+                        </a>
+                        <div class="project-description">
+                            <div class="project-title-text">SFU Genome Sciences</div>
+                            <div class="project-subtitle">Web Design + Web Development</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide project-card" data-title="MEOW">
+                    <div class="card-container">
+                        <a href="game.html"> <!-- Link to MEOW page -->
+                            <div class="card card-image" style="background-image: url('assets/images/game-project-image.jpg');"></div>
+                        </a>
+                        <div class="project-description">
+                            <div class="project-title-text">Independent Video Game</div>
+                            <div class="project-subtitle">Game Design + Game Development + 3D Digital Game Art</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide project-card" data-title="SERVICE DESK">
+                    <div class="card-container">
+                        <a href="ecu-service-desk.html"> <!-- Link to Service Desk page -->
+                            <div class="card card-image" style="background-image: url('assets/images/service-desk-project-image.png');"></div>
+                        </a>
+                        <div class="project-description">
+                            <div class="project-title-text">ECU IT Services</div>
+                            <div class="project-subtitle">Business Analysis + Web Development</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide project-card" data-title="WE CARE">
+                    <div class="card-container">
+                        <a href="wecare.html"> <!-- Link to We Care page -->
+                            <div class="card card-image" style="background-image: url('assets/images/wecare-project-image.png');"></div>
+                        </a>
+                        <div class="project-description">
+                            <div class="project-title-text">Self-Initiated</div>
+                            <div class="project-subtitle">UX/UI Design</div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+
+            <!-- Project Title and Line -->
+            <div class="project-info">
+                <div class="project-line-title">
+                    <div class="line"></div>
+                    <div class="project-title">Project Title</div>
+                </div>
+            </div>
+
+            <!-- Swiper Pagination for Navigation Dots -->
+            <div class="swiper-pagination"></div>
+        </section>
     </div>
-    <div class="pin">
-        <canvas id="hero-lightpass"></canvas>
-    </div>
+
+
+
+
+    <!-- Full-Screen Overlay for Transition -->
+    <div class="transition-overlay"></div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Ripples.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+
+    <!-- Custom Script -->
     <script src="js/script_home.js"></script>
+    
+
 </body>
 </html>
