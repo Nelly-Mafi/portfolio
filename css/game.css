@@ -852,6 +852,10 @@ html.has-scroll-smooth {
 
 @media (max-width: 768px) {
 
+    .cursor, .cursor-border {
+        display: none !important;
+    }
+
     .header-container {
         padding: 10px 5%;
     }
